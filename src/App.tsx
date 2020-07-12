@@ -4,6 +4,7 @@ import './App.css';
 import {Route, Switch} from "react-router";
 import {RecipesList} from "./RecipesList";
 import {BrowserRouter, Link} from "react-router-dom";
+import {RecipePage} from "./RecipePage";
 
 
 function App() {
@@ -32,8 +33,8 @@ function App() {
                 <Route exact path="/recipes">
                     <RecipesList/>
                 </Route>
-                <Route exact path="/recipes/:recipe_id">
-                    Specific recipe
+                <Route exact path="/recipes/:recipeId">
+                    <RecipePage />
                 </Route>
                 <Route exact path="/">
                     <Link to="/recipes">Recipe list</Link>

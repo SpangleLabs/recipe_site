@@ -24,7 +24,7 @@ export const RecipesList: React.FunctionComponent<RecipesListProps> = (props) =>
             <ul>
             {
                 recipes.map(
-                    r => <li>{r.name}</li>
+                    r => <li><Link to={`/recipes/${r.recipe_id}`}>{r.name}</Link></li>
                 )
             }
         </ul>
