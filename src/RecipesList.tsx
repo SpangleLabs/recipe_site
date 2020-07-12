@@ -18,7 +18,7 @@ export const RecipesList: React.FunctionComponent<RecipesListProps> = () => {
     }, [])
 
     const recipeLastMade = (recipe: FullRecipe) => {
-        if (recipe.history.length == 0) {
+        if (recipe.history.length === 0) {
             return "Not made yet"
         }
         return Math.max.apply(recipe.history.map(e => Date.parse(e.date)))
