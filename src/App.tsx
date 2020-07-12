@@ -5,6 +5,7 @@ import {Route, Switch} from "react-router";
 import {RecipesList} from "./RecipesList";
 import {BrowserRouter, Link} from "react-router-dom";
 import {RecipePage} from "./RecipePage";
+import {AddRecipe} from "./AddRecipe";
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
                 </Route>
                 <Route exact path="/recipes/:recipeId">
                     <RecipePage />
+                </Route>
+                <Route exact path="/add_recipe">
+                    <AddRecipe />
                 </Route>
                 <Route exact path="/">
                     <Link to="/recipes">Recipe list</Link>
