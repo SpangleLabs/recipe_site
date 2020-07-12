@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom"
 
-export const RecipesList: React.FunctionComponent = () => {
+interface RecipesListProps {
+}
+
+export const RecipesList: React.FunctionComponent<RecipesListProps> = (props) => {
     const [recipes, setRecipes] = useState<FullRecipeData[]>([])
 
     useEffect(() => {
@@ -16,7 +20,7 @@ export const RecipesList: React.FunctionComponent = () => {
 
         <div>
             <h1>Recipes</h1>
-            <a href="/add_recipe">Add recipe</a>
+            <Link to="/add_recipe">Add recipe</Link>
             <ul>
             {
                 recipes.map(
