@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 interface RecipesListProps {
 }
 
-export const RecipesList: React.FunctionComponent<RecipesListProps> = (props) => {
+export const RecipesList: React.FunctionComponent<RecipesListProps> = () => {
     const [recipes, setRecipes] = useState<FullRecipeData[]>([])
 
     useEffect(() => {
@@ -13,8 +13,8 @@ export const RecipesList: React.FunctionComponent<RecipesListProps> = (props) =>
             const data = await resp.json() as FullRecipeData[]
             setRecipes(data)
         }
-        fetchData();
-    })
+        fetchData().then();
+    }, [])
 
     return (
 
