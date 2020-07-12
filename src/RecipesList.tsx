@@ -17,6 +17,13 @@ export const RecipesList: React.FunctionComponent<RecipesListProps> = () => {
         fetchData().then();
     }, [])
 
+    const recipeLastMade = (recipe: FullRecipe) => {
+        if (recipe.history.length == 0) {
+            return "Not made yet"
+        }
+        return Math.max.apply(recipe.history.map(e => Date.parse(e.date)))
+    }
+
     return (
 
         <div>
@@ -25,7 +32,10 @@ export const RecipesList: React.FunctionComponent<RecipesListProps> = () => {
             <ul>
             {
                 recipes.map(
-                    r => <li><Link to={`/recipes/${r.recipe_id}`}>{r.name}</Link></li>
+                    r => <li>
+                        <Link to={`/recipes/${r.recipe_id}`}>{r.name}</Link>
+                        Last made: {recipeLastMade(r)}
+                    </li>
                 )
             }
         </ul>
